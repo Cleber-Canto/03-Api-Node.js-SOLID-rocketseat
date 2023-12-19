@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db-postgres-apisolid:
+    image: bitnami/postgresql
+    ports:
+      - "5434:5432"
+    container_name: "db-postgres-apisolid"
+    restart: always
+    volumes:
+      - ./banco-de-dados-apisolid:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpg
+
+volumes:
+ banco-de-dados-apisolid:
